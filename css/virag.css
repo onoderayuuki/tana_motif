@@ -1,0 +1,457 @@
+/* 色セット */
+/* #9EA46B,#556B2F,#19310B */
+/*#556B2F,#6D804C,#85956A,#9DAA88,#B6BFA5,#CED4C3,#E6E9E1  */
+/* #B4C498,#556B2F,#2F3C6B,#692F6B */
+body {
+ background: #F3F1F3;
+ color: #F3F1F3;
+ font: 400 87.5%/1.5em 'メイリオ',Meiryo,sans-serif;
+  }
+header{
+  background: #556b2f;
+  height:1vh;
+  margin-bottom: 1vh;
+  }
+main{
+ /* max-height:470px; */
+ width: 100%;
+ overflow: auto;
+  }
+main.max{ height: 75vh; }
+main.min{ height: 54vh; }
+.canvas-container{
+  margin: 0 auto; /* 中央寄せ用 */
+  }
+.canvas_button{
+  display: inline-block;
+  color:#556B2F;
+  position: absolute;
+}
+.canvas_button > p{margin:0;}
+#left{ top:40vh;}
+#right{ top:40vh; left:84vw;}
+#up{ top:3vh; left:41vw; }
+#down{ left:41vw; }
+#down.max{ top:70vh;}
+#down.min{ top:50vh;}
+/*メニューバー  */
+nav{
+ background: #556b2f;
+ box-shadow: 0 3px 9px rgba(0,0,0,0.1);
+ width: 100%;
+ height:50px;
+ /* min-height:40px; */
+ /* height: 7vh; */
+ display: flex;
+ justify-content:space-around;
+}
+nav h4{
+ text-align: center;
+ flex:1.1;
+  }
+.menu_icon{
+  cursor: pointer;
+  height: auto;
+  width: auto;
+  flex: 1;
+  align-items:center;
+  justify-content: center;
+}
+.menu_icon.active{
+  color:#556b2f;
+  background: #FFFFFF;
+}
+/*メニューアイコン関連  */
+p { text-align: center;}
+#title{color:#B4C499;}
+#export > p::before{
+  font-family: 'Material Icons';
+  content: "\E867";
+  font-size: 24px;
+  /* margin:auto; */
+}
+#grid > p::before{
+  font-family: 'Material Icons';
+  content: "\E22A";
+  font-size: 24px;
+  /* content: "\E228"; オンの時*/
+}
+#tune > p::before{
+  content: "\E429";
+  font-family: 'Material Icons';
+  font-size: 24px;
+}
+#flip > p::before{
+  content: "\E3E8";
+  font-family: 'Material Icons';
+  font-size: 24px;
+}
+#back > p::before{
+  content: "undo";
+  font-family: 'Material Icons';
+  font-size: 24px;
+}
+#remove > p::before{
+  content: "\E872";
+  font-family: 'Material Icons';
+  font-size: 24px;
+}
+#add > p::before{
+  content: "\E145";
+  font-family: 'Material Icons';
+  font-size: 24px;
+}
+
+/*移動*/
+#left > p::before{
+  content: "\E314";
+  font-family: 'Material Icons';
+  font-size: 60px;
+}
+#up > p::before{
+  content: "\E316";
+  font-family: 'Material Icons';
+  font-size: 60px;
+}
+#down > p::before{
+  content: "\E313";
+  font-family: 'Material Icons';
+  font-size: 60px;
+}
+#right > p::before{
+  content: "\E315";
+  font-family: 'Material Icons';
+  font-size: 60px;
+}
+#zoom > p::before{
+  content: "\E8B6";
+  font-family: 'Material Icons';
+  font-size: 24px;
+}
+#re_zoom > p::before{
+  content: "\E042";
+  font-family: 'Material Icons';
+  font-size: 24px;
+}
+#adjust_zoom > p::before{
+  content: "settings_overscan";
+  font-family: 'Material Icons';
+  font-size: 24px;
+}
+/* チューニング */
+#vertical > p::before{
+  content: "\E3C5";
+  font-family: 'Material Icons';
+  font-size: 24px;
+}
+#horizon > p::before{
+  content: "\E3C3";
+  font-family: 'Material Icons';
+  font-size: 24px;
+}
+#negaposi > p::before{
+  content: "\E3B9";
+  font-family: 'Material Icons';
+  font-size: 24px;
+}
+#size > p::before{
+  content: "\E434";
+  font-family: 'Material Icons';
+  font-size: 24px;
+}
+#move > p::before{
+  content: "\E89F";
+  font-family: 'Material Icons';
+  font-size: 24px;
+}
+/* エクスポートほか  */
+#download > p::before{
+  content: "\E3F4";
+  font-family: 'Material Icons';
+  font-size: 24px;
+}
+#download2 > p::before{
+  content: "\E24D";
+  font-family: 'Material Icons';
+  font-size: 24px;
+}
+#clip > p::before{
+  content: "\E226";
+  font-family: 'Material Icons';
+  font-size: 24px;
+}
+#re_zoom{
+   margin-right:5vw;
+}
+
+/*メニュー アコーディオン  */
+aside{
+  width: 100%;
+  /* position: absolute; */
+  /* bottom: 0 vh; */
+  }
+aside.max{ height:34vh; }
+aside.min{ height:0vh; }
+
+/*タブ  */
+.tabs {
+  margin: 0 auto;
+}
+.tab_item {
+  width: calc(100%/5);
+  background-color: #d9d9d9;
+  line-height: 5vh;
+  font-size: 10px;
+  text-align: center;
+  color: #565656;
+  display: block;
+  float: left;
+  text-align: center;
+  font-weight: bold;
+  transition: all 0.2s ease;
+}
+input[name="tab_item"] {
+  display: none;
+}
+.tab_content {
+  display: none;
+  overflow: hidden;
+}
+.acdn_container{
+  display: block;
+  background: #FFFFFF;
+  }
+.acdn_container.solid ,
+#tab1:checked ~ #tab1_content,
+#tab2:checked ~ #tab2_content,
+#tab3:checked ~ #tab3_content,
+#tab4:checked ~ #tab4_content,
+#tab5:checked ~ #tab5_content{
+  height:100%;
+  width:100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  overflow: auto;
+  align-items: flex-start;
+}
+.tabs input:checked + .tab_item {
+  background: none;
+}
+
+/*画像追加用ボックス  */
+.plusbox{
+ cursor: pointer;
+ margin: 10px;
+ height: 50px;
+ /* border:#B12E37 solid 1px; */
+  }
+.emb{
+ height: 50px;
+ width: auto;
+  }
+
+/*  トグルボタン */
+.switch_box{
+  margin-left: 5vw;
+  display: flex;
+}
+.switch_icon,.switch { line-height: 3vh; }
+.switch_icon { color: #333;}
+.switch_box span { color: #333;}
+#input_nickname {
+  display: inline-block;
+  width :70px;
+}
+.switch{ margin: 2vh 3vw; }
+
+.switch__label {
+  width: 37px;
+  position: relative;
+  display: inline-block;
+  padding-top: 3px;
+}
+.switch__content {
+  display: block;
+  cursor: pointer;
+  position: relative;
+  border-radius: 7px;
+  height: 14px;
+  background-color: #ddd;/*rgba(34,31,31,.26); */
+  -webkit-transition: all .1s .4s;
+     -moz-transition: all .1s .4s;
+      -ms-transition: all .1s .4s;
+       -o-transition: all .1s .4s;
+          transition: all .1s .4s;
+  overflow: hidden;
+}
+.switch__content:after {
+  content: "";
+  display: block;
+  position: absolute;
+
+  width: 0;
+  height: 100%;
+  top: 0;
+  left: 0;
+
+  border-radius: 7px;
+  -webkit-transition: all .5s;
+     -moz-transition: all .5s;
+      -ms-transition: all .5s;
+       -o-transition: all .5s;
+          transition: all .5s;
+}
+.switch__input { display: none; }
+.switch__circle {
+  display: block;
+  top: 0px;
+  left: 0px;
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  -webkit-border-radius: 10px;
+          border-radius: 10px;
+  background-color: #F1F1F1;
+  -webkit-transition: all .5s;
+     -moz-transition: all .5s;
+      -ms-transition: all .5s;
+       -o-transition: all .5s;
+          transition: all .5s;
+  -webkit-box-shadow: 0 2px 2px #ccc;
+          box-shadow: 0 2px 2px #ccc;
+}
+
+.switch__input:checked ~ .switch__circle {
+  left: 18px;
+  background-color: #6D804C;
+}
+.switch__input:checked ~ .switch__content {
+  border-color: transparent;
+  -webkit-transition: all 0s;
+     -moz-transition: all 0s;
+      -ms-transition: all 0s;
+       -o-transition: all 0s;
+          transition: all 0s;
+}
+.switch__input:checked ~ .switch__content:after {
+  background-color: #85956A;
+  width: 100%;
+}
+
+/* レンジ */
+  input[type=range] {
+      /*removes default webkit styles*/
+      -webkit-appearance: none;
+      /*fix for FF unable to apply focus style bug */
+      border: 1px solid white;
+      /*required for proper track sizing in FF*/
+      width: 80px;
+  }
+  /* webkit */
+  input[type=range]::-webkit-slider-runnable-track {
+      width: 100px;
+      height: 5px;
+      background: #ddd;
+      border: none;
+      border-radius: 3px;
+  }
+  input[type=range]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      border: none;
+      height: 20px;
+      width: 20px;
+      border-radius: 50%;
+      background: #6D804C;
+      margin-top: -7px;
+  }
+  input[type=range]:focus {
+      outline: none;
+  }
+  input[type=range]:focus::-webkit-slider-runnable-track {
+      background: #ccc;
+  }
+  /* ff */
+  input[type=range]::-moz-range-track {
+      width: 80px;
+      height: 5px;
+      background: #ddd;
+      border: none;
+      border-radius: 3px;
+  }
+  input[type=range]::-moz-range-thumb {
+      border: none;
+      height: 20px;
+      width: 20px;
+      border-radius: 50%;
+      background: #6D804C;
+  }
+
+  /*hide the outline behind the border*/
+  input[type=range]:-moz-focusring{
+      outline: 1px solid white;
+      outline-offset: -1px;
+  }
+  input[type=range]::-ms-track {
+      width: 100px;
+      height: 5px;
+
+      /*remove bg colour from the track, we'll use ms-fill-lower and ms-fill-upper instead */
+      background: transparent;
+
+      /*leave room for the larger thumb to overflow with a transparent border */
+      border-color: transparent;
+      border-width: 6px 0;
+
+      /*remove default tick marks*/
+      color: transparent;
+  }
+  input[type=range]::-ms-fill-lower {
+      background: #777;
+      border-radius: 10px;
+  }
+  input[type=range]::-ms-fill-upper {
+      background: #ddd;
+      border-radius: 10px;
+  }
+  input[type=range]::-ms-thumb {
+      border: none;
+      height: 20px;
+      width: 20px;
+      border-radius: 50%;
+      background: #6D804C;
+  }
+  input[type=range]:focus::-ms-fill-lower {
+      background: #888;
+  }
+  input[type=range]:focus::-ms-fill-upper {
+      background: #ccc;
+  }
+  /* サイズ表示 */
+  input[type=number] {
+    width: 40px;
+    border:none;
+    border-bottom:1px solid #ddd;
+   }
+  input[type=number]:focus {
+    outline:none;
+    border-bottom:1px solid #6D804C;
+   }
+  #input-height { margin-left: 3vw; }
+
+  /* エクスポート */
+  .im_ex_menu{
+    width: 100%;
+    display: flex;
+    /* justify-content: space-around; */
+  }
+  .im_ex_icon {
+    line-height: 4vh;
+    color:#333;
+    flex-grow:1;
+   }
+  .myMotifs{
+     margin:auto;
+     width:100px;
+   }
+</style>
