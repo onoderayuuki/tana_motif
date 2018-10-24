@@ -29,155 +29,16 @@
       <!-- <h3 class="header-element">tana_</h3> -->
   </header>
 
-  <main class="max">
-    <!-- <div class="c_container" id="c-container"> -->
-      <canvas id="test_canvas"></canvas>
-    <!-- </div> -->
-    <div class="canvas_button" id="left"><p></p></div>
-    <div class="canvas_button" id="up"><p></p></div>
-    <div class="canvas_button max" id="down"><p></p></div>
-    <div class="canvas_button" id="right"><p></p></div>
-    </main>
 
   <!--メニューバー  -->
   <nav class="fix">
-      <!-- <h4 id="title">Virāg</h4> -->
-      <!-- <div class="menu_icon acdn_btn" id="export"><p></p></div> -->
-      <div class="menu_icon" id="ok"><p>ok</p></div>
+
       <div class="menu_icon" id="undo"><p>undo</p></div>
-      <!-- <div class="menu_icon" id="redo"><p>redo</p></div>
-      <div class="menu_icon acdn_btn" id="setting"><p>setting</p></div>
-      <div class="menu_icon acdn_btn" id="color"><p>color</p></div>
-      <div class="menu_icon acdn_btn" id="info"><p>Info</p></div>
-      <div class="menu_icon" id="copy"><p>copy</p></div> -->
-      <div class="menu_icon" id="remove"><p>remove</p></div>
-      <div class="menu_icon acdn_btn" id="add"><p>add</p></div>
+
   </nav>
-  <!-- メニュー詳細 アコーディオン表示 -->
-  <aside class="acdn min">
-    <!-- インフォメーション-->
-    <div class="acdn_container solid" id="acdn-info">
-      <div class = "">
-
-      </div>
-    </div>
-    <!-- エクスポート -->
-    <div class="acdn_container solid" id="acdn-export">
-      <div class = "im_ex_menu">
-        <div class="im_ex_icon" id="clip"><p>保存</p></div>
-        <div class="im_ex_icon" id="download"><p>ダウンロード</p></div>
-        <div class="im_ex_icon" id="download2"><p>一括ダウンロード</p></div>
-      </div>
-    </div>
-    <!-- 各種設定 -->
-    <div class="acdn_container solid" id="acdn-tune">
-      <!--ズーム-->
-      <div class="switch_box">
-        <!-- <p>ズーム</p> -->
-        <div class="switch_icon" id="zoom"><p></p></div>
-        <div class="switch">
-          <input type="range" id="zoom_range" value="1" min="0.2" max="1.0" step="0.1">
-        </div>
-        <div class="switch_icon" id="re_zoom"><p></p></div>
-        <div class="switch_icon" id="adjust_zoom"><p></p></div>
-      </div>
-      <!--縦横 -->
-      <div class="switch_box">
-        <!-- <p>縦横</p> -->
-        <div class="switch_icon" id="vertical"><p></p></div>
-        <div class="switch">
-          <label class="switch__label">
-            <input type="checkbox" class="switch__input" id="vh_switch">
-            <span class="switch__content"></span>
-            <span class="switch__circle"></span>
-          </label>
-        </div>
-        <div class="switch_icon" id="horizon"><p></p></div>
-      </div>
-      <!-- サイズ -->
-      <div class="switch_box">
-        <div class="switch_icon" id="size"><p></p></div>
-        <div class="switch">
-          <input type="range" id="size_range" value="2" min="0" max="2" step="1">
-          <span id="input_nickname"> ≒ A3</span>
-          <input type="number" id="input_height" readonly="readonly" value="140">
-          <span> × </span>
-          <input type="number" id="input_width" readonly="readonly" value="100">
-        </div>
-        </div>
-      <!--グリッド -->
-      <div class="switch_box">
-        <div class="switch_icon" id="grid"><p></p></div>
-        <div class="switch">
-          <label class="switch__label">
-            <input type="checkbox" class="switch__input" checked="checked" id="grid_switch">
-            <span class="switch__content"></span>
-            <span class="switch__circle"></span>
-          </label>
-        </div>
-      </div>
-      <!--キャンバス移動ボタン -->
-      <div class="switch_box">
-        <div class="switch_icon" id="move"><p></p></div>
-        <div class="switch">
-          <label class="switch__label">
-            <input type="checkbox" class="switch__input" checked="checked" id="canvas_button_switch">
-            <span class="switch__content"></span>
-            <span class="switch__circle"></span>
-          </label>
-        </div>
-      </div>
-
-      <!--線画切替-->
-      <div class="switch_box">
-        <div class="switch_icon" id="negaposi"><p></p></div>
-        <div class="switch">
-          <label class="switch__label">
-            <input type="checkbox" class="switch__input" checked="checked" id="np_switch">
-            <span class="switch__content"></span>
-            <span class="switch__circle"></span>
-          </label>
-        </div>
-      </div>
-
-    </div>
-    <!-- モチーフ追加 -->
-    <div class="tabs acdn_container" id="acdn-add" >
-      <!-- Tab 1 -->
-      <input type="radio" name="tab_item" id="tab1" checked>
-      <label class="tab_item" for="tab1">セット</label>
-      <!-- Tab 2 -->
-      <input type="radio" name="tab_item" id="tab2">
-      <label class="tab_item" for="tab2">花</label>
-      <!-- Tab 3 -->
-      <input type="radio" name="tab_item" id="tab3">
-      <label class="tab_item" for="tab3">蔦</label>
-      <!-- Tab 4 -->
-      <input type="radio" name="tab_item" id="tab4">
-      <label class="tab_item" for="tab4">蔓</label>
-      <!-- Tab 5 -->
-      <input type="radio" name="tab_item" id="tab5">
-      <label class="tab_item" for="tab5">その他</label>
-
-      <section id="tab1_content" class="tab_content" ></section>
-      <section id="tab2_content" class="tab_content"></section>
-      <section id="tab3_content" class="tab_content"></section>
-      <section id="tab4_content" class="tab_content"></section>
-      <section id="tab5_content" class="tab_content"></section>
-
-    </div>
-
-  </aside>
-  <!-- 画像ダウンロード用 -->
-    <a href="#" download="my_image.png" id="a_download"></a>
-    <a href="#" download="my_image.json" id="dl_JSON"></a>
-
-
     <script src="js/virag.js"></script>
 
 
 </body>
 </html>
-<!-- 140*100 420*300
-280*200 840*600
-420*280 1260*840-->
+
