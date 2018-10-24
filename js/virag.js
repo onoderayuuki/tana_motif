@@ -153,13 +153,13 @@ var Elements = document.getElementsByClassName("emb");
  }
 
 // モチーフ削除
-document.getElementById('remove').onclick = function(){
-  let activeObjects = canvas.getActiveObjects();
-  canvas.discardActiveObject()
-  if (activeObjects.length) {
-    canvas.remove.apply(canvas, activeObjects);
-  }
-}
+// document.getElementById('remove').onclick = function(){
+//   let activeObjects = canvas.getActiveObjects();
+//   canvas.discardActiveObject()
+//   if (activeObjects.length) {
+//     canvas.remove.apply(canvas, activeObjects);
+//   }
+// }
 // 保存
 var originSave = function(){
   // キャンバスの初期位置
