@@ -180,9 +180,9 @@ var originSave = function(){
   window.localStorage.setItem("myMotif" + i, json);
   window.localStorage.setItem("myMotif_img" + i, base64);
 }
-document.getElementById('ok').onclick = function(){
- saveCanvas();
-}
+// document.getElementById('ok').onclick = function(){
+//  saveCanvas();
+// }
 //展開
 
 //戻る進む
