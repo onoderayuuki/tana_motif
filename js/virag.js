@@ -1,15 +1,15 @@
  window.onload = function(){
 
  // キャンバスを設定
-  let canvas = new fabric.Canvas('test_canvas',{
+let canvas = new fabric.Canvas('test_canvas',{
       selection: false,
       height:	420,
       width:300
      });
   // var canvas = new fabric.CanvasWithViewport('mycanvas');
-  // canvas.setBackgroundImage('./Photos/back_small.png', canvas.renderAll.bind(canvas));
+canvas.setBackgroundImage('./Photos/back_small.png', canvas.renderAll.bind(canvas));
 
-  // グリッド
+// グリッド
 let customs = {color1 :'#E9E9E9',color2 :'#F7F8F6'}
 let addGridLines = function(gridLines,lineLength,limitLine,gridInterval,whichVH){
   // グリッド用の縦もしくは横のラインの配列を返す。
@@ -37,7 +37,7 @@ let addGridLines = function(gridLines,lineLength,limitLine,gridInterval,whichVH)
     gridLines.push(gridLine);// 配列に追加
   };
   return gridLines
-}
+  }
 var groupGrid = function(x,y){
   // グループ化されたグリッドの集合を返す
   let interval = 30
@@ -48,12 +48,12 @@ var groupGrid = function(x,y){
   gridArray.push(scale);
   let gridGroup = new fabric.Group(gridArray,{selectable: false});
   return gridGroup
-}
-  let grid = groupGrid(canvas.width,canvas.height)
-  // canvas.add(grid);
+  }
+let grid = groupGrid(canvas.width,canvas.height)
+canvas.add(grid);
 
 // モチーフに共通プロパティを設定する。枠とか
-fabric.customMotif = fabric.util.createClass(fabric.Image, {
+fabric.CustomMotif = fabric.util.createClass(fabric.Image, {
   type: 'customMotif',
   borderColor: '#19310B',
   cornerColor: '#19310B',
@@ -93,14 +93,20 @@ fabric.customMotif = fabric.util.createClass(fabric.Image, {
   }
 });
 // カスタムしたモチーフクラスの再読み込み用
-fabric.customMotif.fromObject = function(object, callback, forceAsync) {
-  return fabric.Object._fromObject('customMotif', object, callback, forceAsync);
-}
+// fabric.CustomMotif.fromObject = function(object, callback, forceAsync) {
+//   return fabric.Object._fromObject('customMotif', object, callback, forceAsync);
+// }
+fabric.CustomMotif.fromObject = function(object, callback) {
+  fabric.util.loadImage(object.src, function(img) {
+    callback && callback(new fabric.CustomMotif(img, object));
+  });
+};
 
-fabric.customMotif.async = true;
+
+fabric.CustomMotif.async = true;
 
 var createMotif = function(src){
-  let motif = new fabric.customMotif(src, {
+  let motif = new fabric.CustomMotif(src, {
        top : canvas.height/3,
        left : canvas.width/2.5
      });
@@ -110,6 +116,7 @@ var createMotif = function(src){
  //初期モチーフを追加
 let firstMotif = createMotif('./Photos1/m5.png');
 canvas.add(firstMotif);
+
 // 追加用画像ボタン
  // プラスボックスの作成
 var addPlusBox = function(arrayPhoto,id){
@@ -153,13 +160,13 @@ var Elements = document.getElementsByClassName("emb");
  }
 
 // モチーフ削除
-// document.getElementById('remove').onclick = function(){
-//   let activeObjects = canvas.getActiveObjects();
-//   canvas.discardActiveObject()
-//   if (activeObjects.length) {
-//     canvas.remove.apply(canvas, activeObjects);
-//   }
-// }
+document.getElementById('remove').onclick = function(){
+  let activeObjects = canvas.getActiveObjects();
+  canvas.discardActiveObject()
+  if (activeObjects.length) {
+    canvas.remove.apply(canvas, activeObjects);
+  }
+}
 // 保存
 var originSave = function(){
   // キャンバスの初期位置
@@ -180,9 +187,9 @@ var originSave = function(){
   window.localStorage.setItem("myMotif" + i, json);
   window.localStorage.setItem("myMotif_img" + i, base64);
 }
-// document.getElementById('ok').onclick = function(){
-//  saveCanvas();
-// }
+document.getElementById('ok').onclick = function(){
+ saveCanvas();
+}
 //展開
 
 //戻る進む
