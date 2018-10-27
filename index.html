@@ -14,7 +14,7 @@
     <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> -->
     <!-- fabric.js -->
     <script src="js/fabric.js"></script>
-<!-- <script src="http://cdnjs.cloudflare.com/ajax/libs/fabric.js/1.5.0/fabric.min.js"></script> -->
+    <!-- <script src="http://cdnjs.cloudflare.com/ajax/libs/fabric.js/1.5.0/fabric.min.js"></script> -->
     <!-- <script src="js/fabricjs_viewport.js"></script> -->
 
     <!--[if lt IE 9]>
@@ -42,16 +42,16 @@
   <!--メニューバー  -->
   <nav class="fix">
       <!-- <h4 id="title">Virāg</h4> -->
-      <!-- <div class="menu_icon acdn_btn" id="export"><p></p></div>
-      <div class="menu_icon" id="ok"><p>ok</p></div> -->
-      <div class="menu_icon" id="undo"><p>click</p></div>
+      <!-- <div class="menu_icon acdn_btn" id="export"><p></p></div> -->
+      <div class="menu_icon" id="ok"><p>ok</p></div>
+      <div class="menu_icon" id="undo"><p>undo</p></div>
       <!-- <div class="menu_icon" id="redo"><p>redo</p></div>
       <div class="menu_icon acdn_btn" id="setting"><p>setting</p></div>
       <div class="menu_icon acdn_btn" id="color"><p>color</p></div>
       <div class="menu_icon acdn_btn" id="info"><p>Info</p></div>
       <div class="menu_icon" id="copy"><p>copy</p></div> -->
-      <div class="menu_icon" id="remove"><p></p></div>
-      <div class="menu_icon acdn_btn" id="add"><p></p></div> -->
+      <div class="menu_icon" id="remove"><p>remove</p></div>
+      <div class="menu_icon acdn_btn" id="add"><p>add</p></div>
   </nav>
   <!-- メニュー詳細 アコーディオン表示 -->
   <aside class="acdn min">
@@ -168,7 +168,9 @@
     </div>
 
   </aside>
-
+  <!-- 画像ダウンロード用 -->
+    <a href="#" download="my_image.png" id="a_download"></a>
+    <a href="#" download="my_image.json" id="dl_JSON"></a>
 
 
     <script src="js/virag.js"></script>
@@ -176,3 +178,6 @@
 
 </body>
 </html>
+<!-- 140*100 420*300
+280*200 840*600
+420*280 1260*840-->
