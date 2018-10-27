@@ -54,7 +54,7 @@ canvas.add(grid);
 
 // モチーフに共通プロパティを設定する。枠とか
 fabric.CustomMotif = fabric.util.createClass(fabric.Image, {
-  type: 'customMotif',
+  type: 'CustomMotif',
   borderColor: '#19310B',
   cornerColor: '#19310B',
   cornerSize: 20,
